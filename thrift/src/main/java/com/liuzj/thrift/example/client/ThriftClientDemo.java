@@ -1,11 +1,8 @@
 package com.liuzj.thrift.example.client;
 
-import com.liuzj.thrift.example.server.HelloWorldService;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
-import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;
-import org.apache.thrift.transport.TFramedTransport;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
@@ -17,7 +14,6 @@ public class ThriftClientDemo {
     public static final int TIMEOUT = 30000;
 
     /**
-     *
      * @param userName
      */
     public void startClient(String userName) {
@@ -49,7 +45,7 @@ public class ThriftClientDemo {
      */
     public static void main(String[] args) {
         for (int i = 0; i < 20; i++) {
-            new Thread(()->{
+            new Thread(() -> {
                 ThriftClientDemo client = new ThriftClientDemo();
                 client.startClient("china");
             }).start();
