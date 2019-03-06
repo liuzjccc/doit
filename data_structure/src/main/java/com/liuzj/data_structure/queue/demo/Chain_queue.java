@@ -123,5 +123,6 @@ public class Chain_queue<E> {
         chain_queue.remove("C");
         System.out.println(chain_queue.getFromLeft());
         System.out.println(chain_queue.getFromRight());
+        Stack stack = new Stack();
     }
 }
